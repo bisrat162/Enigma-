@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bisrat Engida Mandefro | Mechanical Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a3a52;
+            --secondary: #2c5aa0;
+            --accent: #ff6b35;
+            --light-bg: #f9fafc;
+            --text-dark: #2d3436;
+            --text-light: #636e72;
+            --border: #e0e3e7;
+            --delicate: #e8ecf1;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: #ffffff;
+        }
+
+        /* ============ HEADER ============ */
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+
+        .header-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            opacity: 0.9;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+            opacity: 1;
+        }
+
+        /* ============ CONTAINER ============ */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ============ HERO SECTION ============ */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            color: #000000;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: #000000;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.3);
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+            color: #000000;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.3);
+            font-weight: 500;
+        }
+
+        /* ============ SECTION STYLING ============ */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        section:nth-child(odd) {
+            background: #ffffff;
+        }
+
+        section:nth-child(even) {
+            background: var(--light-bg);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.3px;
+        }
+
+        .section-divider {
+            width: 50px;
+            height: 2px;
+            background: var(--accent);
+            margin: 0 auto;
+            border-radius: 1px;
+        }
+
+        /* ============ ABOUT SECTION ============ */
+        #about {
+            page-break-before: always;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .about-content h3 {
+            color: var(--secondary);
+            font-size: 1.35rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            line-height: 1.85;
+            font-size: 0.95rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, rgba(44, 90, 160, 0.05) 100%);
+            border-left: 3px solid var(--accent);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box strong {
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        /* ============ PROJECTS SECTION ============ */
+        #projects {
+            background: white;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            visibility: visible;
+        }
+
+        .project {
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--secondary);
+            transition: all 0.3s ease;
+        }
+
+        .project:hover {
+            box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+
+        .project h3 {
+            color: var(--primary);
+            font-size: 1.7rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.2px;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-tag {
+            background: var(--delicate);
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .project p {
+            color: var(--text-light);
+            margin-bottom: 1.3rem;
+            line-height: 1.85;
+            font-size: 0.95rem;
+        }
+
+        .project p strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .project-features {
+            background: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 1.5rem 0;
+        }
+
+        .project-features h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
+        .features-list {
+            list-style: none;
+        }
+
+        .features-list li {
+            color: var(--text-light);
+            padding: 0.5rem 0;
+            padding-left: 1.8rem;
+            position: relative;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .features-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .metrics-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .metric-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--light-bg);
+            border-radius: 6px;
+            border-top: 2px solid var(--accent);
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+        }
+
+        .metric-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .project-link:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        /* ============ EXPERIENCE SECTION ============ */
+        #experience {
+            page-break-before: always;
+        }
+
+        .experience-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .experience-item {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--secondary);
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1.5rem;
+        }
+
+        .exp-header h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .exp-period {
+            background: var(--accent);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .company-name {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .experience-item p {
+            color: var(--text-light);
+            margin-bottom: 1.2rem;
+            line-height: 1.85;
+            font-size: 0.95rem;
+        }
+
+        .exp-section {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .exp-section h4 {
+            color: var(--primary);
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .skills-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .skill-badge {
+            background: var(--delicate);
+            color: var(--secondary);
+            padding: 0.4rem 0.9rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* ============ SKILLS SECTION ============ */
+        #skills {
+            page-break-before: always;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+        }
+
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 1.8rem;
+            font-size: 1.15rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .skill-item {
+            margin-bottom: 1.3rem;
+        }
+
+        .skill-name {
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            font-size: 0.9rem;
+        }
+
+        .skill-bar {
+            background: var(--delicate);
+            height: 5px;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            border-radius: 2px;
+        }
+
+        /* ============ CONTACT SECTION ============ */
+        #contact {
+            page-break-before: always;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .contact-item a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-intro {
+            font-size: 1.05rem;
+            margin: 2rem 0;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: white;
+            color: var(--primary);
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .social-btn:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            background: #0f2438;
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 768px) {
+            .about-grid,
+            .skills-grid,
+            .metrics-row {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            nav a {
+                margin-left: 1rem;
+                font-size: 0.8rem;
+            }
+
+            .exp-header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .project {
+                padding: 2rem;
+            }
+        }
+
+        @media print {
+            header, footer {
+                display: none;
+            }
+
+            section {
+                page-break-inside: avoid;
+                padding: 3rem 0;
+            }
+
+            .project {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <div class="logo">BEM</div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Bisrat Engida Mandefro</h1>
+        <div class="subtitle">Mechanical Engineer | Design & Systems Integration</div>
+        <p>Fresh graduate specializing in design engineering with hands-on expertise in CAD/FEA, industrial systems, and innovative problem-solving. Currently Lead Design Engineer at Fusion Manufacturing, dedicated to transforming concepts into optimized, production-ready solutions.</p>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Professional Profile</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="about-grid">
+                <div>
+                    <h3>About Me</h3>
+                    <p>Mechanical Engineering graduate (CGPA 3.65/4.0) from Addis Ababa University with comprehensive expertise spanning design optimization, structural analysis, systems integration, and practical industrial maintenance. I combine theoretical knowledge with hands-on experience to solve complex engineering challenges efficiently and cost-effectively.</p>
+
+                    <div class="highlight-box">
+                        <strong>Current Role:</strong>
+                        Lead Design Engineer at Fusion Manufacturing, directing design optimization initiatives and managing cross-functional engineering projects with focus on manufacturability and cost efficiency.
+                    </div>
+
+                    <div class="highlight-box">
+                        <strong>Education:</strong>
+                        Addis Ababa University, Mechanical Engineering (Design Stream), CGPA 3.65/4.0
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Core Expertise</h3>
+                    
+                    <div class="highlight-box">
+                        <strong>Design & Analysis:</strong>
+                        Proficient in SolidWorks for 3D CAD modeling, FEA structural simulation, CFD fluid analysis, and geometric optimization with iterative design methodology.
+                    </div>
+
+                    <div class="highlight-box">
+                        <strong>Systems Integration:</strong>
+                        Experienced in relay-based control systems, electrical-mechanical integration, sensor systems, and cost-benefit optimization for industrial automation.
+                    </div>
+
+                    <div class="highlight-box">
+                        <strong>Practical Engineering:</strong>
+                        Hands-on skills in industrial maintenance diagnostics, arc welding (SMAW), thermal systems, preventive maintenance, and technical documentation.
+                    </div>
+
+                    <div class="highlight-box">
+                        <strong>Problem-Solving Approach:</strong>
+                        Data-driven methodology combining theoretical analysis with practical constraints, delivering solutions that are technically sound and commercially viable.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="projects-container">
+                <!-- Project 1 -->
+                <div class="project">
+                    <h3>3D-Printed Quadcopter Drone</h3>
+                    <div class="project-meta">
+                        <span class="meta-tag">Bachelor's Thesis</span>
+                        <span class="meta-tag">2026</span>
+                        <span class="meta-tag">Team of 2</span>
+                    </div>
+
+                    <p><strong>Objective:</strong> Lead the mechanical design and structural validation of a complete quadcopter drone frame optimized for FDM 3D printing, achieving maximum strength-to-weight ratio while maintaining manufacturability and cost efficiency.</p>
+
+                    <p><strong>Challenge:</strong> Conventional drone designs required extensive prototyping and iterative manufacturing. The objective was to develop a cost-effective alternative that could be manufactured using readily available 3D printing technology without compromising structural integrity or flight performance.</p>
+
+                    <div class="project-features">
+                        <h4>Key Achievements</h4>
+                        <ul class="features-list">
+                            <li>Led iterative design optimization across three distinct cycles, analyzing performance metrics at each stage</li>
+                            <li>Designed tapered I-beam arm geometry reducing mass by 23% while maintaining rigidity and structural performance</li>
+                            <li>Conducted comprehensive static and modal FEA analysis on frame, arms, and complete assembly with safety factor of 3.15</li>
+                            <li>Performed CFD simulations to evaluate aerodynamic characteristics and optimize arm cross-sectional geometry</li>
+                            <li>Developed complete technical documentation including dimensioned manufacturing drawings and assembly specifications</li>
+                            <li>Calculated final prototype cost at $237, validating cost-effectiveness for individual and small-scale production</li>
+                        </ul>
+                    </div>
+
+                    <div class="metrics-row">
+                        <div class="metric-item">
+                            <div class="metric-value">3.15</div>
+                            <div class="metric-label">Safety Factor (FEA)</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value">$237</div>
+                            <div class="metric-label">Prototype Cost</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value">209×246mm</div>
+                            <div class="metric-label">Envelope</div>
+                        </div>
+                    </div>
+
+                    <p><strong>Technical Tools:</strong> SolidWorks 3D CAD Modeling, SolidWorks Simulation (FEA), CFD Analysis, Technical Drawing & GD&T Standards, Iterative Design Optimization</p>
+                    <a href="https://grabcad.com/bisrat.engida-3" target="_blank" class="project-link">View Complete 3D Models & Drawings on GrabCAD →</a>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project">
+                    <h3>Automatic Condensate Drainage System</h3>
+                    <div class="project-meta">
+                        <span class="meta-tag">Internship Capstone</span>
+                        <span class="meta-tag">Ethiopian Airlines</span>
+                        <span class="meta-tag">Team of 3</span>
+                    </div>
+
+                    <p><strong>Problem Statement:</strong> Industrial steam dryer machines at Ethiopian Airlines' laundry facility experienced severe vibration and mechanical stress during startup cycles. Root cause analysis revealed residual condensate accumulation in steam coils, causing water hammer phenomenon when fresh steam was introduced—a critical issue requiring immediate intervention.</p>
+
+                    <p><strong>Operational Impact:</strong> The existing manual drainage procedure relied on operator memory and inconsistent execution, resulting in equipment downtime, reduced operational efficiency, increased maintenance costs, and risk of catastrophic component failure.</p>
+
+                    <div class="project-features">
+                        <h4>Engineering Solution</h4>
+                        <ul class="features-list">
+                            <li>Designed relay-based electrical control system utilizing inverted logic architecture for safe operation</li>
+                            <li>Integrated dual-level conductivity sensors for precise moisture detection within drainage conduit</li>
+                            <li>Implemented 24V solenoid valve actuation powered by 220V→24V step-down transformer with galvanic isolation</li>
+                            <li>Engineered fail-safe design ensuring valve remains closed upon power loss, preventing unintended drainage</li>
+                            <li>Achieved response time of less than 2 seconds from moisture detection to complete drainage</li>
+                            <li>Reduced system cost by 70-80% compared to commercial condensate management solutions</li>
+                        </ul>
+                    </div>
+
+                    <div class="metrics-row">
+                        <div class="metric-item">
+                            <div class="metric-value">70-80%</div>
+                            <div class="metric-label">Cost Savings</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value">$53-103</div>
+                            <div class="metric-label">Total System Cost</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value">&lt;2 sec</div>
+                            <div class="metric-label">Response Time</div>
+                        </div>
+                    </div>
+
+                    <p><strong>Operational Impact:</strong> Successfully eliminated equipment vibration during startup sequences, removed dependency on manual intervention, reduced maintenance team workload by automating condensate management, and extended operational lifespan of steam coils and associated plumbing infrastructure. System has been operational at Ethiopian Airlines since implementation in June 2025.</p>
+
+                    <p><strong>Technical Disciplines:</strong> Control Systems Design, Electrical Circuit Logic, Sensor Integration, Thermodynamic Principles, Mechanical Troubleshooting, Cost-Benefit Analysis, Industrial Automation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Professional Experience</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="experience-list">
+                <!-- Current Role -->
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <h3>Lead Design Engineer</h3>
+                            <div class="company-name">Fusion Manufacturing</div>
+                        </div>
+                        <span class="exp-period">Current</span>
+                    </div>
+                    <p>Direct design optimization initiatives and manage cross-functional engineering projects focused on manufacturability, cost efficiency, and technical innovation. Responsible for CAD modeling, structural analysis, design validation, and coordination with manufacturing and quality teams.</p>
+                    
+                    <div class="exp-section">
+                        <h4>Key Responsibilities</h4>
+                        <div class="skills-flex">
+                            <span class="skill-badge">Design Leadership</span>
+                            <span class="skill-badge">CAD Optimization</span>
+                            <span class="skill-badge">Project Management</span>
+                            <span class="skill-badge">Team Coordination</span>
+                            <span class="skill-badge">Technical Documentation</span>
+                            <span class="skill-badge">Manufacturability Analysis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Internship -->
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <h3>Mechanical Engineering Intern</h3>
+                            <div class="company-name">Ethiopian Airlines — Electro-Mechanical Maintenance Department</div>
+                        </div>
+                        <span class="exp-period">Feb – Jun 2025</span>
+                    </div>
+                    <p>Completed intensive rotation-based internship across industrial maintenance disciplines within the Ground Services Division. Gained hands-on experience with complex mechanical systems, preventive maintenance protocols, and troubleshooting methodologies in a high-demand operational environment.</p>
+
+                    <div class="exp-section">
+                        <h4>Industrial Systems Exposure</h4>
+                        <p><strong>Industrial Washing & Drying Systems:</strong> Diagnosed bearing failures and replaced fractured piston assemblies in industrial washing machines; extracted and inspected worn drum bearings; performed comprehensive component maintenance including seal inspection, control calibration, and system validation.</p>
+                        
+                        <p><strong>Thermal Systems & Steam Distribution:</strong> Repaired steam-line leaks at threaded connections using mechanical disassembly and PTFE resealing techniques; executed quarterly preventive maintenance on fire-tube steam boiler including internal scale removal, compressed-air cleaning, and external casing restoration; troubleshot steam trap failures and optimized system efficiency.</p>
+                        
+                        <p><strong>HVAC & Cooling Infrastructure:</strong> Gained comparative exposure to centralized air-cooled vapor compression chillers versus decentralized split-AC systems; developed understanding of refrigeration cycles, compressor operation, condenser maintenance protocols, and building management system (BMS) integration for large-scale facility cooling.</p>
+                        
+                        <p><strong>Advanced Systems & Fabrication:</strong> Observed PW150A turboprop engine architecture installed on Bombardier Q400 regional aircraft; participated in arc welding (SMAW) for machine frame fabrication and structural repairs; gained hands-on experience with precision fitting, tolerance management, and quality assurance protocols.</p>
+                    </div>
+
+                    <div class="exp-section">
+                        <h4>Skills Developed</h4>
+                        <div class="skills-flex">
+                            <span class="skill-badge">Maintenance Diagnostics</span>
+                            <span class="skill-badge">Component Replacement</span>
+                            <span class="skill-badge">Thermal Systems</span>
+                            <span class="skill-badge">Pressure Equipment</span>
+                            <span class="skill-badge">Control Systems</span>
+                            <span class="skill-badge">Arc Welding (SMAW)</span>
+                            <span class="skill-badge">Problem-Solving</span>
+                            <span class="skill-badge">Technical Reporting</span>
+                            <span class="skill-badge">Safety Protocols</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Technical Competencies</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="skills-grid">
+                <!-- CAD & Design -->
+                <div class="skill-category">
+                    <h3>CAD & Design</h3>
+
+                    <div class="skill-item">
+                        <div class="skill-name">SolidWorks</div>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-name">3D Modeling</div>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 88%"></div></div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-name">Technical Drawings</div>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-name">GD&T</div>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
+                    </div>
+                </div>
+
+                <!-- Analysis & Simulation -->
+                <div class="skill-category">
+                    <h3>Analysis & Simulation</h3>
+
+                    <div class="skill-item">
+                        <div class="skill-name">FEA (Finite Element)</div>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-name">CFD (Fluid Dynamics)</div>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-name">Modal Analysis</div>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 78%"></div></div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-name">MATLAB</div>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 65%"></div></div>
+                    </div>
+                </div>
+
+                <!-- Systems & Maintenance -->
+                <div class="skill-category">
+                    <h3>Systems & Maintenance</h3>
+
+                    <div class="skill-item">
+                        <div class="skill-name">Control Systems</div>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-name">Troubleshooting</div>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 82%"></div></div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-name">Arc Welding</div>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 72%"></div></div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-name">Preventive Maintenance</div>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <div class="contact-container">
+            <div class="section-header">
+                <h2 class="section-title" style="color: white; margin-bottom: 0;">Let's Connect</h2>
+                <div class="section-divider" style="margin-top: 1.5rem;"></div>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">📍 Addis Ababa, Ethiopia</div>
+                <div class="contact-item">📧 <a href="mailto:bisratengida3@gmail.com">bisratengida3@gmail.com</a></div>
+                <div class="contact-item">📱 <a href="tel:+251922547413">+251 922 547 413</a></div>
+            </div>
+
+            <p class="contact-intro">I'm interested in discussing design projects, engineering solutions, career opportunities, or collaboration on innovative mechanical engineering challenges. Feel free to reach out through any of the channels below.</p>
+
+            <div class="social-buttons">
+                <a href="https://www.linkedin.com/in/bisrat-engida-a7a7b6433" class="social-btn" title="LinkedIn" target="_blank">in</a>
+                <a href="https://www.upwork.com/freelancers/~0157cadb1721d39140" class="social-btn" title="Upwork" target="_blank">U</a>
+                <a href="https://grabcad.com/bisrat.engida-3" class="social-btn" title="GrabCAD" target="_blank">G</a>
+                <a href="mailto:bisratengida3@gmail.com" class="social-btn" title="Email">✉</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Bisrat Engida Mandefro | Mechanical Engineer | Design & Systems Integration</p>
+        <p>Addis Ababa, Ethiopia | bisratengida3@gmail.com | +251 922 547 413</p>
+    </footer>
+
+</body>
+</html>
